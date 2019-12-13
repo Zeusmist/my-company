@@ -1,8 +1,10 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 
-class Signup extends Component{
+class Register extends Component{
     constructor(){
         super();
+        this.pictureInput = React.createRef();
         this.state = {
             res: undefined
         }
@@ -17,40 +19,42 @@ class Signup extends Component{
 
     handleSubmit = (event) => {
         event.preventDefault();
+        const formData = new FormData();
+
+        formData.append('firstName', this.state.firstName);
+        formData.append('lastName', this.state.lastName);
+        formData.append('age', this.state.age);
+        formData.append('gender', this.state.gender);
+        formData.append('position', this.state.position);
+        formData.append('country', this.state.country);
+        formData.append('address', this.state.address);
+        formData.append('email', this.state.email);
+        formData.append('username', this.state.username);
+        formData.append('password', this.state.password);
+        formData.append('phone', this.state.phone);
+        formData.append('picture', this.pictureInput.current.files[0]);
+        
         fetch('/api/register', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                firstName: this.state.firstName,
-                lastName: this.state.lastName,
-                age: this.state.age,
-                gender: this.state.gender,
-                position: this.state.position,
-                country: this.state.country,
-                address: this.state.address,
-                email: this.state.email,
-                username: this.state.username,
-                password: this.state.password,
-                phone: this.state.phone,
-                picture: this.state.picture
-            })
+            body: formData
         })
             .then(res => res.json())
             .then(data => {
                 if (data.success)
                 this.props.history.push('/login');
+                // console.log(this.pictureInput.current.files)
                 else this.setState({
                     res: data.message
                 });
             })
+            .catch(err => console.log(err))
     }
     
     render(){
         return(
             <div>
                 {this.state.res ? <span>{this.state.res}</span> : null}
+                {/* <form onSubmit={this.handleSubmit} encType="multipart/form-data"> */}
                 <form onSubmit={this.handleSubmit}>
                     <input 
                         type="text" 
@@ -153,10 +157,9 @@ class Signup extends Component{
                         onChange={this.handleChange}
                     /><br/>
                     <input 
-                        type="text" 
-                        name="picture" 
-                        placeholder="Link to image"
-                        onChange={this.handleChange}
+                        type="file" 
+                        name="picture"
+                        ref={this.pictureInput}
                     /><br/>
                     <button 
                         type="submit">Sign Up</button>
@@ -166,4 +169,4 @@ class Signup extends Component{
     }
 }
 
-export default Signup;
+export default withRouter(Register);

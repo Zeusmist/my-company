@@ -3,7 +3,7 @@ import { setInStorage } from "../utils/storage";
 import axios from "axios";
 import { withRouter } from "react-router-dom";
 
-class Login extends Component{
+class AdminLogin extends Component{
     constructor(){
         super();
         this.state = {
@@ -23,7 +23,7 @@ class Login extends Component{
     handleSubmit = (event) => {
         event.preventDefault();
 
-        fetch('/api/login',{
+        fetch('/api/admin-login',{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -37,8 +37,8 @@ class Login extends Component{
             .then(async data => {
                 if(data.success){
                     await axios.post('/myinfo-post', {username: this.state.username});
-                    setInStorage('authToken', {token: data.token});
-                    this.props.history.push('/user/my-info');
+                    setInStorage('adminToken', {token: data.token});
+                    this.props.history.push('/admin');
                 }
                 else this.setState({
                     res: data.message
@@ -65,11 +65,11 @@ class Login extends Component{
                         value={this.state.password}
                         onChange={this.handleChange}
                     /><br/>
-                    <button type="submit">Login</button>
+                    <button type="submit">Login admin</button>
                 </form>
             </div>
         )
     }
 }
 
-export default withRouter(Login);
+export default withRouter(AdminLogin);

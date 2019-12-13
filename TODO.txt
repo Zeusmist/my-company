@@ -1,0 +1,16 @@
+*****In admin section... on adding task, taskCompleted in DB would turn to false.
+
+*****Add delete button in admin section... (on Deleteing a user from staff, find the user by Staff position and delete in position db too).
+
+*****In User section... add View of task of the moment, add button to click when complete.. (on click of this button will turn taskStatus in DB to true.)
+
+
+*****Repeat profile edit process in backend and forntend!
+*****In front end-- on success of edit, error message should be set to undefined and a green check icon should appear.
+
+*****Edit of password should ask for old password and new password, if old password is correct , new password would be accepted
+
+Edit of position should be done in admin
+On edit of position, staff should be deleted from previous position collection. and added to new position collection.
+
+Begin arrangement of staff by position and all staffs pages, use react paginate for navigation

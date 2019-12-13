@@ -9,4 +9,5 @@ const sessionSchema = mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model('Session', sessionSchema);
+module.exports.UserSession = mongoose.model('UserSession', sessionSchema);
+module.exports.AdminSession = mongoose.model('AdminSession', sessionSchema);

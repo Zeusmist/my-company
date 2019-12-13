@@ -13,7 +13,7 @@ const registerValidation = (data) => {
         username: Joi.string().required().min(4).max(20),
         password: Joi.string().required().min(6).max(50),
         phone: Joi.string().required().min(10).max(15),
-        picture: Joi.string().allow('').optional()
+        picture: Joi.any().allow('').optional()
     });
     return registerSchma.validate(data);
 }

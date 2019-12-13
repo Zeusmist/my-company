@@ -69,12 +69,26 @@ const staffSchema = new mongoose.Schema({
     },
     picture: {
         type: String,
+        required: false,
+    },
+    picture_id: {
+        type: String,
         required: false
     },
     date: {
         type: Date,
         required: true,
         default: Date.now()
+    },
+    task: {
+        type: String,
+        required: false,
+        default: 'Check out the admin section of this app. To do that, you will need to create an account as either an Engineer, Human Resources or Manager. Then "login as an admin" using the account you created. Hope you like the app.'
+    },
+    taskCompleted: {
+        type: Boolean,
+        required: false,
+        default: false
     }
 })
 

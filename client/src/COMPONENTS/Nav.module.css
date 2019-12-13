@@ -1,0 +1,133 @@
+.sidebar {
+  /* margin: 0; */
+  /* padding: 0; */
+  padding-top: 60px;
+  width: 200px;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow-x: hidden;
+  /* overflow: auto; */
+  z-index: 1021;
+  top: 0;
+  left: 0;
+  transition: 0.5s;
+}
+
+.positions{
+  background: none;
+  border: none;
+  width: 100%;
+}
+/* Sidebar links */
+.sidebar > a, .positions {
+  display: block;
+  color: black;
+  font-size: 18px;
+  padding: 20px 8px 20px 32px;
+  text-decoration: none;
+  transition: 0.3s;
+  border-bottom: 1px solid grey;
+}
+
+/* Links on mouse-over */
+.sidebar > a:hover{
+  background-color: #555;
+  color: white;
+  text-decoration: none;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.closebtn{
+  background: none;
+  border: none;
+  padding: 0;
+  display: none;
+}
+
+.dropdownDividers {
+  height:0;
+  margin:0;
+  overflow:hidden;
+  border-top:1px solid #e9ecef
+}
+
+.positionDropdown {
+  /* position:absolute; */
+  /* top:100%; */
+  left:0;
+  z-index:1000;
+  /* display:none; */
+  float:left;
+  min-width:10rem;
+  /* padding:.5rem 0; */
+  margin:.125rem 0 0;
+  font-size:15px;
+  color:#212529;
+  text-align:left;
+  list-style:none;
+  /* background-color:#fff; */
+  background-clip:padding-box;
+  /* border-top:1px solid rgba(0, 0, 0, 0.562); */
+  border-bottom:1px solid rgba(0, 0, 0, 0.562);
+  /* border-radius:.25rem */
+}
+
+.dropdownItems {
+  display:block;
+  width:100%;
+  padding:.25rem 32px;
+  /* clear:both; */
+  font-weight:400;
+  color:#212529;
+  text-align:inherit;
+  white-space:nowrap;
+  background-color: #f1f1f1;
+  border:0
+}
+
+.searchForm {
+  color: black;
+  font-size: 15px;
+  padding: 20px 8px 20px 32px;
+  text-decoration: none;
+  border-bottom: 1px solid grey;
+}
+
+.logout {
+  margin-left: 32px;
+  margin-top: 20px;
+}
+
+.contactMe {
+  font-size: 15px;
+  padding: 20px 8px 20px 32px;
+  text-decoration: none;
+  border-bottom: 1px solid grey;
+}
+
+.contactMe a{
+  color: black;
+  margin-right: 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+@media screen and (max-width: 767px) {
+  .sidebar {
+    width: 0px;
+  }
+  .closebtn {
+      display: block;
+  }
+} 
