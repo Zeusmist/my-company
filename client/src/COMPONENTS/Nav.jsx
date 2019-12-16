@@ -72,9 +72,9 @@ class Nav extends Component{
                 >&times;
                 </button>
                 <div className={cx(styles.contactMe)}>
-                    <a href="http://github.com" rel="noopener noreferrer" target="_blank"><GitHubIcon fontSize="large"/></a>
-                    <a href="http://linkedin.com" rel="noopener noreferrer" target="_blank"><LinkedInIcon fontSize="large"/></a>
-                    <a href="http://instagram.com" rel="noopener noreferrer" target="_blank"><InstagramIcon fontSize="large"/></a>
+                    <a href="https://github.com/zeusmist" rel="noopener noreferrer" target="_blank"><GitHubIcon fontSize="large"/></a>
+                    <a href="https://ng.linkedin.com/in/david-obidu" rel="noopener noreferrer" target="_blank"><LinkedInIcon fontSize="large"/></a>
+                    <a href="https://www.instagram.com/zeusmist/" rel="noopener noreferrer" target="_blank"><InstagramIcon fontSize="large"/></a>
                 </div>
                 <Link to="/user/my-info">
                     My task

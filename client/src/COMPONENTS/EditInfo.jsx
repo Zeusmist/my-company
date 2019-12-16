@@ -128,7 +128,7 @@ class EditInfo extends Component{
                     {this.state.firstNameErr ? <span className="text-danger small">{this.state.firstNameErr}<br/></span> : null}
                     {this.state.firstNameSuccess ? <span className="text-success small">Updated succesfully<br/></span> : null}
                     <h6 className={infoStyle.information}>First name: </h6>
-                    <form onSubmit={this.handleSubmit}>
+                    <form onSubmit={this.handleSubmit} autoComplete="off">
                         <input
                             type="text" 
                             name="firstName" 
@@ -143,7 +143,7 @@ class EditInfo extends Component{
                     {this.state.lastNameErr ? <span className="text-danger small">{this.state.lastNameErr}<br/></span> : null}
                     {this.state.lastNameSuccess ? <span className="text-success small">Updated succesfully<br/></span> : null}
                     <h6 className={infoStyle.information}>Last name: </h6>
-                    <form onSubmit={this.handleSubmit}>
+                    <form onSubmit={this.handleSubmit} autoComplete="off">
                         <input
                             type="text" 
                             name="lastName" 
@@ -158,7 +158,7 @@ class EditInfo extends Component{
                     {this.state.ageErr ? <span className="text-danger small">{this.state.ageErr}<br/></span> : null}
                     {this.state.ageSuccess ? <span className="text-success small">Updated succesfully<br/></span> : null}
                     <h6 className={infoStyle.information}>Age: </h6>
-                    <form onSubmit={this.handleSubmit}>
+                    <form onSubmit={this.handleSubmit} autoComplete="off">
                         <input
                             type="text" 
                             name="age" 
@@ -173,7 +173,7 @@ class EditInfo extends Component{
                     {this.state.countryErr ? <span className="text-danger small">{this.state.countryErr}<br/></span> : null}
                     {this.state.countrySuccess ? <span className="text-success small">Updated succesfully<br/></span> : null}
                     <h6 className={infoStyle.information}>Country: </h6>
-                    <form onSubmit={this.handleSubmit}>
+                    <form onSubmit={this.handleSubmit} autoComplete="off"> 
                         <input
                             type="text" 
                             name="country" 
@@ -188,7 +188,7 @@ class EditInfo extends Component{
                     {this.state.addressErr ? <span className="text-danger small">{this.state.addressErr}<br/></span> : null}
                     {this.state.addressSuccess ? <span className="text-success small">Updated succesfully<br/></span> : null}
                     <h6 className={infoStyle.information}>Address: </h6>
-                    <form onSubmit={this.handleSubmit}>
+                    <form onSubmit={this.handleSubmit} autoComplete="off">
                         <input
                             type="text" 
                             name="address" 
@@ -203,7 +203,7 @@ class EditInfo extends Component{
                     {this.state.emailErr ? <span className="text-danger small">{this.state.emailErr}<br/></span> : null}
                     {this.state.emailSuccess ? <span className="text-success small">Updated succesfully<br/></span> : null}
                     <h6 className={infoStyle.information}>E-mail: </h6>
-                    <form onSubmit={this.handleSubmit}>
+                    <form onSubmit={this.handleSubmit} autoComplete="off">
                         <input
                             type="email" 
                             name="email" 
@@ -218,7 +218,7 @@ class EditInfo extends Component{
                     {this.state.usernameErr ? <span className="text-danger small">{this.state.usernameErr}<br/></span> : null}
                     {this.state.usernameSuccess ? <span className="text-success small">Updated succesfully<br/></span> : null}
                     <h6 className={infoStyle.information}>Username: </h6>
-                    <form onSubmit={this.handleSubmit}>
+                    <form onSubmit={this.handleSubmit} autoComplete="off">
                         <input
                             type="text" 
                             name="username" 
@@ -235,7 +235,7 @@ class EditInfo extends Component{
                         {this.state.passwordSuccess ? "Updated succesfully" : "Min of 6 digits, max of 50 digits"}
                     </span><br/>
                     <h6 className={infoStyle.information}>Password: </h6>
-                    <form onSubmit={this.handleSubmit}>
+                    <form onSubmit={this.handleSubmit} autoComplete="off">
                         <input
                             type="password" 
                             name="password" 
@@ -261,7 +261,7 @@ class EditInfo extends Component{
                         {this.state.phoneSuccess ? "Updated succesfully" : "Min of 10 digits, max of 15 digits"}
                     </span><br/>
                     <h6 className={infoStyle.information}>Phone: </h6>
-                    <form onSubmit={this.handleSubmit}>
+                    <form onSubmit={this.handleSubmit} autoComplete="off">
                         <input
                             type="text" 
                             name="phone" 

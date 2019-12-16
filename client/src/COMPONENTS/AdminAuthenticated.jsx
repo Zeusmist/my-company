@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import axios from "axios";
 import { getFromStorage } from "../utils/storage";
 import { Route, withRouter } from "react-router-dom";
-import AdminLogin from "./AdminLogin";
 import AdminSegment from "./AdminSegment";
 
 class AdminAuthenticated extends Component{

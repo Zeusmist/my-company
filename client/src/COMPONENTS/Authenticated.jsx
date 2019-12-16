@@ -49,12 +49,12 @@ class Authenticated extends Component{
                     localStorage.removeItem('authToken');
                     this.props.history.push('/login');
                 })
-            }
-            else{
+        } 
+        else{
                 this.props.history.push('/login');
-            }
         }
-
+    }
+    
     componentDidMount(){
         this.verifyLogin();
     }

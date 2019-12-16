@@ -331,7 +331,7 @@ router.post('/admin-login', async (req, res) => {
     const { error } = loginValidation(req.body);
     if (error) return res.status(400).send({success: false, message: error.details[0].message});
 
-    const validStaff = await HumanResources.findOne({username: req.body.username.toLowerCase().trim()});
+    let validStaff = await HumanResources.findOne({username: req.body.username.toLowerCase().trim()});
     if(!validStaff){
         validStaff = await Engineer.findOne({username: req.body.username.toLowerCase().trim()})
         if(!validStaff){
