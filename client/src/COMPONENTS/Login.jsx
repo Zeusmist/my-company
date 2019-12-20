@@ -81,7 +81,7 @@ class Login extends Component{
                 if(data.success){
                     await axios.post('/myinfo-post', {username: this.state.username});
                     setInStorage('adminToken', {token: data.token});
-                    this.props.history.push('/admin');
+                    this.props.history.push('/admin/dashboard');
                 }
                 else this.setState({
                     res: data.message
@@ -104,7 +104,7 @@ class Login extends Component{
                     images={[image1, image2, image3, image4]}
                     duration={2} transition={2}
                 />
-                <h3 className="text-center">My Company App</h3>
+                <h3 className="text-center pt-3">My Company App</h3>
                 <div className={indexStyle.containerCon}>
                     {res ? <span className="text-danger">{res}</span> : null}
                     <form 

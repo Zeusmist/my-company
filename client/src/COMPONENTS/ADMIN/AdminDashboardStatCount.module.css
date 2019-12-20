@@ -1,0 +1,25 @@
+.statCount{
+    position: relative;
+    height: 100px;
+    /* border: 1px solid black; */
+    /* text-align: center; */
+    margin-right: 20px;
+    margin-top: 20px;
+    color: ghostwhite;
+}
+
+.sidebar{
+    position: absolute;
+    width: 30%;
+    height: 100%;
+    border-right: 1px solid rgba(182, 181, 181, 0.664);
+    padding: 10px 0;
+}
+
+.count{
+    position: absolute;
+    width: 70%;
+    height:100%;
+    left:30%;
+    padding: 15px 0
+}

@@ -83,7 +83,7 @@ const staffSchema = new mongoose.Schema({
     task: {
         type: String,
         required: false,
-        default: 'Check out the admin section of this app. To do that, you will need to create an account as either an Engineer, Human Resources or Manager. Then "login as an admin" using the account you created. Hope you like the app.'
+        default: 'Check out the admin section of this app. To do that, you will need to create an account as an Engineer, Human Resources or Manager. Then "login as an admin" using the account you created. As an admin you would be able to see Staff statistics, hand out tasks, etc... Hope you like the app.'
     },
     taskCompleted: {
         type: Boolean,

@@ -36,11 +36,11 @@ router.post('/register', parser.single("picture"), async (req, res) => {
     position = position.toLowerCase();
 
     //Check if the email already exists
-    const emailExists = await Staff.findOne({email: req.body.email});
+    const emailExists = await Staff.findOne({email: req.body.email.toLowerCase().trim()});
     if (emailExists) return res.status(400).send({success: false, message: "Email already in use"});
     
     //Check if the username already exists
-    const userExists = await Staff.findOne({username: req.body.username});
+    const userExists = await Staff.findOne({username: req.body.username.toLowerCase().trim()});
     if (userExists) return res.status(400).send({success: false, message: "Username taken"});
     
     //Hash the password

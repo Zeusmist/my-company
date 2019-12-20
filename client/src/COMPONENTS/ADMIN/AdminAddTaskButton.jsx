@@ -38,16 +38,17 @@ class AdminAddTaskButton extends Component{
     render(){
         return(
             <div>
-                <button onClick={this.toggleTask}>Add Task</button>
+                <button className="btn btn-outline-secondary btn-sm" onClick={this.toggleTask}>Add Task</button>
                 {
                     this.state.addTask ?
-                    <form onSubmit={this.handleSubmit}>
-                        <textarea 
+                    <form onSubmit={this.handleSubmit} className="form-group">
+                        <textarea
                             name="task"
                             value={this.state.task}
                             onChange={this.handleChange}
+                            className="form-control"
                         />
-                        <button type="submit">Send</button>
+                        <button className="btn btn-success btn-sm" type="submit">Add</button>
                     </form>
                     : null
                 }

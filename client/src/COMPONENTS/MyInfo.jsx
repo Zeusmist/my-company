@@ -117,7 +117,7 @@ class MyInfo extends Component{
             </div>;
 
         return(
-            <div>
+            <div className={styles.container}>
                 {!isLoaded ? 
                     <Loader/>
                     : error ? 

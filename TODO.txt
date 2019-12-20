@@ -14,3 +14,7 @@ Edit of position should be done in admin
 On edit of position, staff should be deleted from previous position collection. and added to new position collection.
 
 Begin arrangement of staff by position and all staffs pages, use react paginate for navigation
+
+Arrange what needs to be arranged in database
+
+Adjust Login Page title with a bit of margin top

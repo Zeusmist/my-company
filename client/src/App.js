@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import Authenticated from "./COMPONENTS/Authenticated";
-import AdminAuthenticated from "./COMPONENTS/AdminAuthenticated";
+import AdminAuthenticated from "./COMPONENTS/ADMIN/AdminAuthenticated";
 import UserApp from './COMPONENTS/UserApp';
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.css";
