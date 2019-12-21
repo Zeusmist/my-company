@@ -110,7 +110,7 @@ class StaffPositions extends Component{
 
     componentDidMount(){
         this.postAndGetStaff();
-        this.interval = setInterval(() => this.authExpiration(), 60000);
+        this.interval = setInterval(() => this.authExpiration(), 3600000);
     }
 
     componentWillUnmount(){

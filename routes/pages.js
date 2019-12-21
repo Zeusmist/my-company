@@ -107,7 +107,7 @@ router.get('/staff-position-get', pageVerify, async (req, res) => {
 //Get user details during login
 let username = undefined;
 router.post('/myinfo-post', (req, res) => {
-    username = req.body.username;
+    username = req.body.username.toLowerCase().trim();
     try{
         res.send('');
     } catch(err){

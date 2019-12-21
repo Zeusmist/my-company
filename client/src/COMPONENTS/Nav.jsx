@@ -48,10 +48,10 @@ class Nav extends Component{
                         this.props.history.push('/login');
                     }
                 })
-                // .catch(err => {
-                //     localStorage.removeItem('authToken');
-                //     this.props.history.push('/login');
-                // })
+                .catch(err => {
+                    localStorage.removeItem('authToken');
+                    this.props.history.push('/login');
+                })
         }
     }
 

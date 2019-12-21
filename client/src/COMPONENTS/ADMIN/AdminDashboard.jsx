@@ -103,7 +103,7 @@ class AdminDashboard extends Component{
     componentDidMount(){
         this.handleCount();
         this.handleChartData();
-        this.interval = setInterval(() => this.authExpiration(), 60000);
+        this.interval = setInterval(() => this.authExpiration(), 3600000);
     }
 
     componentWillUnmount(){

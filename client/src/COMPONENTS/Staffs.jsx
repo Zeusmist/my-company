@@ -103,7 +103,7 @@ class Staffs extends Component{
 
     componentDidMount(){
         this.getStaffs();
-        this.interval = setInterval(() => this.authExpiration(), 60000);
+        this.interval = setInterval(() => this.authExpiration(), 3600000);
     }
 
     componentWillUnmount(){

@@ -10,11 +10,17 @@
 
 *****Edit of password should ask for old password and new password, if old password is correct , new password would be accepted
 
-Edit of position should be done in admin
-On edit of position, staff should be deleted from previous position collection. and added to new position collection.
+*****Edit of position should be done in admin
+*****On edit of position, staff should be deleted from previous position collection. and added to new position collection.
 
-Begin arrangement of staff by position and all staffs pages, use react paginate for navigation
+*****Arrange what needs to be arranged in database
 
-Arrange what needs to be arranged in database
+*****Adjust Login Page title with a bit of margin top
 
-Adjust Login Page title with a bit of margin top
+Logo needs to be adjusted on mobile, its entering menu button
+
+*****Make it impossible to delete CEO
+
+*****Login with correct details, toLowerCase and trim dont seem to be working properly (this wasnt an issue while logging in as admin)
+
+*****FIX:: was able to register without specifying position

@@ -8,7 +8,18 @@ class Register extends Component{
         super();
         this.pictureInput = React.createRef();
         this.state = {
-            res: undefined
+            res: undefined,
+            firstName: undefined,
+            lastName: undefined,
+            age: undefined,
+            gender: undefined,
+            position: undefined,
+            country: undefined,
+            address: undefined,
+            email: undefined,
+            username: undefined,
+            password: undefined,
+            phone: undefined
         }
     }
 
@@ -22,36 +33,44 @@ class Register extends Component{
     handleSubmit = (event) => {
         event.preventDefault();
         this.setState({res: undefined});
-
-        const formData = new FormData();
         
-        formData.append('firstName', this.state.firstName);
-        formData.append('lastName', this.state.lastName);
-        formData.append('age', this.state.age);
-        formData.append('gender', this.state.gender);
-        formData.append('position', this.state.position);
-        formData.append('country', this.state.country);
-        formData.append('address', this.state.address);
-        formData.append('email', this.state.email);
-        formData.append('username', this.state.username);
-        formData.append('password', this.state.password);
-        formData.append('phone', this.state.phone);
-        formData.append('picture', this.pictureInput.current.files[0]);
-        
-        fetch('/api/register', {
-            method: 'POST',
-            body: formData
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.success)
-                this.props.history.push('/login');
-                // console.log(this.pictureInput.current.files)
-                else this.setState({
-                    res: data.message
-                });
-            })
-            .catch(err => console.log(err))
+        const { firstName, lastName, age, gender, position, 
+                country, address, email, username, password, phone } = this.state;
+    
+        if(firstName!==undefined && lastName!==undefined && age!==undefined && gender!==undefined&&
+            position!==undefined && country!==undefined && address!==undefined && email!==undefined &&
+            username!==undefined && password!==undefined && phone!==undefined){
+                this.setState({res: undefined});
+                const formData = new FormData();
+                
+                formData.append('firstName', this.state.firstName.toLowerCase().trim());
+                formData.append('lastName', this.state.lastName.toLowerCase().trim());
+                formData.append('age', this.state.age);
+                formData.append('gender', this.state.gender);
+                formData.append('position', this.state.position);
+                formData.append('country', this.state.country);
+                formData.append('address', this.state.address);
+                formData.append('email', this.state.email);
+                formData.append('username', this.state.username.toLowerCase().trim());
+                formData.append('password', this.state.password);
+                formData.append('phone', this.state.phone);
+                formData.append('picture', this.pictureInput.current.files[0]);
+                
+                fetch('/api/register', {
+                    method: 'POST',
+                    body: formData
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.success)
+                        this.props.history.push('/login');
+                        // console.log(this.pictureInput.current.files)
+                        else this.setState({
+                            res: data.message
+                        });
+                    })
+                    .catch(err => console.log(err))
+        } else {this.setState({res: "A field is empty"})}
     }
 
     handleLogin = () => {
@@ -126,7 +145,7 @@ class Register extends Component{
                                 value={this.state.position}
                                 className="form-control"
                             >
-                                <option>-- Select Position --</option>
+                                <option disabled selected>-- Select Position --</option>
                                 <option value="Cafeteria">Cafeteria</option>
                                 <option value="Customer service">Customer Service</option>
                                 <option value="Designer">Designer</option>

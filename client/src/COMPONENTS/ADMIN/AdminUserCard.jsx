@@ -55,8 +55,8 @@ function AdminUserCard(props){
             </div>
             <div className="card-footer">
                 <AdminAddTaskButton username={username}/>
-                <AdminChangePositionButton username={username} position={position}/>
-                <AdminDeleteStaffButton username={username} position={position.toLowerCase()}/>
+                {position === "CEO" ? null : <AdminChangePositionButton username={username} position={position}/>}
+                {position === "CEO" ? null : <AdminDeleteStaffButton username={username} position={position.toLowerCase()}/>}
             </div>
         </div>
     )
