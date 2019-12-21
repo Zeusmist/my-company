@@ -5,7 +5,6 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const path = require('path');
-const nocache = require('nocache')
 
 const authRoute = require('./routes/auth');
 const pagesRoute = require('./routes/pages');
@@ -13,7 +12,6 @@ const adminPagesRoute = require('./routes/adminPages');
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cors());
-app.use(nocache())
 dotenv.config();
 
 mongoose.connect(process.env.DB_CONNECT, { useNewUrlParser: true, useUnifiedTopology: true }, () => {
